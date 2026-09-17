@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap");
+
+:root {
+  color: #173f43;
+  background: #f7f4ee;
+  font-family: "DM Sans", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+}
+body::before {
+  background: #dceee9;
+  border-radius: 50%;
+  content: "";
+  height: 420px;
+  position: fixed;
+  right: -180px;
+  top: -220px;
+  width: 420px;
+  z-index: -1;
+}
+.app {
+  margin: 0 auto;
+  max-width: 1180px;
+  padding: 44px 44px 80px;
+}
+.hero {
+  border-bottom: 1px solid rgba(23, 63, 67, 0.14);
+  padding: 64px 0 58px;
+}
+.eyebrow {
+  color: #df684d;
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(48px, 7vw, 86px);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 0.98;
+  margin: 16px 0 22px;
+}
+.hero p {
+  color: #6a7b78;
+  font-size: 17px;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 390px;
+}
+.search-form {
+  align-items: center;
+  background: #fffdf9;
+  border: 1px solid rgba(23, 63, 67, 0.12);
+  box-shadow: 0 12px 30px rgba(23, 63, 67, 0.07);
+  display: flex;
+  gap: 10px;
+  margin-top: 34px;
+  max-width: 620px;
+  padding: 8px;
+}
+.search-form input {
+  background: transparent;
+  border: 0;
+  color: #173f43;
+  flex: 1;
+  font: inherit;
+  min-width: 0;
+  outline: 0;
+  padding: 14px 16px;
+}
+.search-form input::placeholder {
+  color: #91a09d;
+}
+.search-form input:focus-visible {
+  box-shadow: inset 0 -2px #df684d;
+}
+.search-form button {
+  background: #df684d;
+  border: 0;
+  color: #fffdf9;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 14px 22px;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+.search-form button:hover {
+  background: #c9553d;
+  transform: translateY(-1px);
+}
+.search-form button:focus-visible {
+  outline: 3px solid rgba(223, 104, 77, 0.3);
+  outline-offset: 2px;
+}
+.recipes {
+  padding-top: 56px;
+}
+.section-title {
+  align-items: end;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 26px;
+}
+.section-title h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 34px;
+  margin: 8px 0 0;
+}
+.recipe-count {
+  color: #71817d;
+  font-size: 13px;
+}
+.meal-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.meal-card {
+  background: #fffdf9;
+  border: 1px solid rgba(23, 63, 67, 0.08);
+  box-shadow: 0 10px 28px rgba(23, 63, 67, 0.07);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.meal-card:hover {
+  box-shadow: 0 18px 38px rgba(23, 63, 67, 0.14);
+  transform: translateY(-6px);
+}
+.image-wrap {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  position: relative;
+}
+.image-wrap img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  width: 100%;
+}
+.meal-card:hover img {
+  transform: scale(1.05);
+}
+.tag {
+  background: #fffdf9;
+  bottom: 12px;
+  color: #df684d;
+  font-size: 10px;
+  font-weight: 700;
+  left: 12px;
+  letter-spacing: 0.12em;
+  padding: 7px 9px;
+  position: absolute;
+  text-transform: uppercase;
+}
+.card-content {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 18px;
+}
+.card-content h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 21px;
+  line-height: 1.15;
+  margin: 0;
+}
+.arrow {
+  color: #df684d;
+  font-size: 22px;
+}
+.status {
+  color: #6a7b78;
+  padding-top: 40px;
+}
+.error {
+  color: #b84e3d;
+}
+@media (max-width: 760px) {
+  .app {
+    padding: 24px 22px 56px;
+  }
+  .hero {
+    padding: 52px 0 44px;
+  }
+  .meal-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 500px) {
+  .search-form {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .search-form input {
+    padding: 13px 14px;
+  }
+  .search-form button {
+    width: 100%;
+  }
+  .meal-grid {
+    grid-template-columns: 1fr;
+  }
+  .section-title {
+    align-items: start;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
